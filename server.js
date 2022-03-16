@@ -21,7 +21,7 @@ app.post('/', (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_FROM,
-    subject: `Message from ${req.body.email}: ${req.body.subject}`,
+    subject: `Message from ${req.body.name} with email : ${req.body.email}: ${req.body.subject}`,
     text: req.body.message,
   };
   sgMail.send(mailOptions, (error, info) => {
